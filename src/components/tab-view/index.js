@@ -3,22 +3,7 @@ import cn from 'classnames';
 
 import './style.scss';
 
-const obj = [
-  {
-    label: 'Latest',
-    component: <h2>Latest</h2>,
-  },
-  {
-    label: 'Favourites',
-    component: <h2>Favourites</h2>,
-  },
-  {
-    label: 'Nearby',
-    component: <h2>Nearby</h2>,
-  },
-];
-
-const TabView = ({ views = obj }) => {
+const TabView = ({ views }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (

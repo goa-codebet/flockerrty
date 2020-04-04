@@ -1,6 +1,8 @@
 @import '../../styles/colors';
 
 .TabView {
+  margin-top: 40px;
+
   &__menu {
     display: flex;
     justify-content: space-evenly;
