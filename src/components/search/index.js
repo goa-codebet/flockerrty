@@ -2,15 +2,15 @@ import React from 'react';
 
 import './style.scss';
 
-export default function Search() {
+export default () => {
   return (
-    <div className="search elevation-3">
+    <div className="Search elevation-3">
       <input
         type="text"
-        className="search__input"
+        className="Search__input"
         placeholder="Search places"
       />
-      <span className="fas fa-search search__icon" />
+      <span className="fas fa-search Search__icon" />
     </div>
   );
-}
+};
