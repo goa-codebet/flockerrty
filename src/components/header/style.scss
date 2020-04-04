@@ -1,8 +1,20 @@
+@import '../../styles/colors';
+
 .Header {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50px;
+
+  &::before {
+    content: '';
+    background: linear-gradient(
+      112.48deg,
+      $primary-pink 6.72%,
+      $secondary-pink 106.88%
+    );
+  }
 
   &__container {
     height: 80%;

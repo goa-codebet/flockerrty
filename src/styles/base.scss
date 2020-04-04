@@ -1,10 +1,13 @@
 @import 'reset.scss';
 @import 'typography.scss';
 @import 'colors.scss';
-@import 'elevation.scss';
 
-/* Magic to be created here by Kimmie */
+/* Magic to be created here by Kimmie and Roberto */
 .container {
   margin: 0 10px;
   max-width: 100%;
+}
+
+.shadow {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
 }
