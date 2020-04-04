@@ -1,0 +1,24 @@
+@import '../../styles/colors';
+
+.Heatmap {
+  &__squares {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.Square {
+  width: 18px;
+  height: 18px;
+  background: $light-gray;
+  position: relative;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff0000;
+  }
+}
