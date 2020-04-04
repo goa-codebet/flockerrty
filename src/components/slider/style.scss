@@ -30,6 +30,10 @@ $border-radius: 4px;
     margin-right: 10px;
     border-radius: $border-radius;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     &__inner {
       display: flex;
       position: relative;
