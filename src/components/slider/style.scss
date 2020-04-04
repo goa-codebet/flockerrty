@@ -1,0 +1,67 @@
+@import '../../styles/colors';
+@import '../../styles/typography';
+
+$border-radius: 4px;
+
+.Slider {
+  overflow: visible;
+  &__header {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    h3 {
+      border-left: 5px solid $primary-pink;
+      padding-left: 10px;
+      font-size: rem(16px);
+      margin-bottom: 0;
+    }
+  }
+
+  &__track {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__item {
+    margin-right: 10px;
+    border-radius: $border-radius;
+
+    &__inner {
+      display: flex;
+      position: relative;
+      justify-content: flex-start;
+      height: 100px;
+      width: 100px;
+      padding: 4px;
+      background-size: cover;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        border-radius: $border-radius;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          360deg,
+          rgba(0, 0, 0, 0.7) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        overflow: hidden;
+      }
+    }
+
+    &__label {
+      color: #fff;
+      margin-top: auto;
+      font-weight: 700;
+      z-index: 5;
+    }
+  }
+}

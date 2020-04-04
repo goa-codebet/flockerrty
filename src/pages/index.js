@@ -3,6 +3,7 @@ import Header from '../components/header';
 import TabView from '../components/tab-view';
 import PlacesView from '../components/places-view';
 import PlaceholderImage from '../images/placeholder.png';
+import Slider from '../components/slider';
 
 const latestPlaces = [
   {
@@ -51,6 +52,7 @@ export default function IndexPage() {
     <div>
       <Header />
       <TabView views={tabViews} />
+      <Slider />
     </div>
   );
 }
