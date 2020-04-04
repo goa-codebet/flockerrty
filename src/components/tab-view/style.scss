@@ -1,0 +1,18 @@
+@import '../../styles/colors';
+
+.TabView {
+  &__menu {
+    display: flex;
+    justify-content: space-evenly;
+
+    &__item {
+      width: 100%;
+      padding: 3px 10px;
+      text-align: center;
+
+      &--active {
+        border-bottom: solid 2px $secondary-blue;
+      }
+    }
+  }
+}
