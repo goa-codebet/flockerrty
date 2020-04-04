@@ -11,9 +11,10 @@
       width: 100%;
       padding: 3px 10px;
       text-align: center;
+      border-bottom: solid 2px $light-gray;
 
       &--active {
-        border-bottom: solid 2px $secondary-blue;
+        border-color: $secondary-blue;
       }
     }
   }

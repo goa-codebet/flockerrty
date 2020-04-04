@@ -3,7 +3,7 @@ import React from 'react';
 import './style.scss';
 
 const PlaceListItem = ({ thumbnail, name, city, hours, heatmap }) => (
-  <div className="PlaceListItem elevation-2">
+  <div className="PlaceListItem shadow">
     <div className="PlaceListItem__thumbnail">
       <img src={thumbnail} loading="lazy" alt={name} />
     </div>
