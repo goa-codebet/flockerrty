@@ -1,7 +1,17 @@
 import React from 'react';
 
-import './header.scss';
+import './style.scss';
+import Search from '../search';
 
-export default function Header() {
-  return <div className="header"></div>;
-}
+export default () => {
+  return (
+    <div className="Header">
+      <div className="Header__container">
+        <p className="Header__container__tagline">
+          Let's fight the virus by reducing crowding in our society
+        </p>
+        <Search />
+      </div>
+    </div>
+  );
+};
