@@ -1,4 +1,5 @@
 import React from 'react';
+import Heatmap from '../heatmap';
 
 import './style.scss';
 
@@ -14,7 +15,9 @@ const PlaceListItem = ({ thumbnail, name, city, hours, heatmap }) => (
         </div>
         <div>{hours}</div>
       </div>
-      <div className="PlaceListItem__content__heatmap"></div>
+      <div className="PlaceListItem__content__heatmap">
+        <Heatmap />
+      </div>
     </div>
   </div>
 );
