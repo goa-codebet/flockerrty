@@ -1,28 +1,83 @@
+@import '../../styles/colors';
+
+$border-radius: 5px;
+$padding-x: 12px;
+
 .Search {
+  position: relative;
   display: flex;
   width: 100%;
-  border: 1px solid gray;
-  border-radius: 5px;
-  flex-direction: row;
-  align-items: center;
-  height: 45px;
-  background-color: white;
-  overflow: hidden;
+  border-radius: $border-radius;
+  border: 1px solid rgba($primary-pink, 0.4);
 
-  &__input {
-    flex-grow: 1;
-    position: relative;
-    border: none;
-    outline: none;
-    padding: 0 10px;
-    background: white;
-    height: 100%;
+  &--hasresult {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
-  &__icon {
-    display: inline-block;
-    padding: 0 10px;
-    align-self: center;
-    font-size: 1.3rem;
+  &__form {
+    display: flex;
+    width: 100%;
+    height: 50px;
+
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border-radius: $border-radius;
+
+    &__input {
+      flex-grow: 1;
+      position: relative;
+      border: none;
+      outline: none;
+      padding: 0 $padding-x;
+      background: white;
+      height: 100%;
+      border-radius: $border-radius;
+    }
+
+    &__icon {
+      display: inline-block;
+      padding: 0 $padding-x;
+      align-self: center;
+      font-size: 18px;
+      color: $primary-pink;
+    }
+  }
+
+  &__result {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0px;
+    width: calc(100% + 2px);
+    margin: 0;
+    padding: 0px $padding-x 5px;
+    transform: translate(-1px, 100%);
+    background-color: #fff;
+    border: 1px solid rgba($primary-pink, 0.4);
+    border-top: 1px solid rgba($primary-pink, 0.3);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    .Search--hasresult & {
+      display: block;
+    }
+
+    > ul {
+      margin: 0 0;
+      padding: 5px 0 0 0;
+    }
+
+    &__item {
+      margin: 0;
+      list-style-type: none;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba($primary-pink, 0.3);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
 }

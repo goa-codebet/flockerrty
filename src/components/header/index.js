@@ -3,7 +3,7 @@ import React from 'react';
 import './style.scss';
 import Search from '../search';
 
-export default () => {
+const Header = () => {
   return (
     <div className="Header">
       <div className="Header__container">
@@ -15,3 +15,5 @@ export default () => {
     </div>
   );
 };
+
+export default Header;
