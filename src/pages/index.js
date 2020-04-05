@@ -15,7 +15,10 @@ const NearbyPlacesView = props => {
       name
       city
       photo
-      heatmap
+      heatmap {
+        time
+        value
+      }
       place_id
     }
   }`);
@@ -28,7 +31,10 @@ const LatestPlacesView = props => {
       name
       city
       photo
-      heatmap
+      heatmap {
+        time
+        value
+      }
       place_id
     }
   }`);
@@ -41,7 +47,10 @@ const FavoritePlacesView = props => {
       name
       city
       photo
-      heatmap
+      heatmap {
+        time
+        value
+      }
       place_id
     }
   }`);
