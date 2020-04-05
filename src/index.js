@@ -2,13 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import Router from './configs/routes';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 
 import './styles/base.scss';
 
+const client = new ApolloClient({
+  uri: 'http://localhost:4000',
+});
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>,
+  <ApolloProvider client={client}>
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
