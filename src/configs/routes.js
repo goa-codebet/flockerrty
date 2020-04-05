@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from '../components/header';
 import IndexPage from '../pages/index';
-import LocationPage from '../pages/location';
+import PlacePage from '../pages/place-page';
 
 const routes = [
   {
@@ -10,14 +11,15 @@ const routes = [
     exact: true,
   },
   {
-    path: '/location',
-    component: LocationPage,
+    path: '/place/:id',
+    component: PlacePage,
   },
 ];
 
 export default function RouteConfig() {
   return (
     <Router>
+      <Header />
       <Switch>
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
@@ -31,7 +33,7 @@ function RouteWithSubRoutes(route) {
   return (
     <Route
       path={route.path}
-      render={(props) => <route.component {...props} routes={route.routes} />}
+      render={props => <route.component {...props} routes={route.routes} />}
     />
   );
 }

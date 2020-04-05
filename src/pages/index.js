@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from '../components/header';
 import TabView from '../components/tab-view';
-import PlacesView from '../components/places-view';
+import PlacesView from '../components/places-list-view';
 import PlaceholderImage from '../images/placeholder.png';
 import Slider from '../components/slider';
 
@@ -50,7 +49,6 @@ const tabViews = [
 export default function IndexPage() {
   return (
     <div>
-      <Header />
       <TabView views={tabViews} />
       <Slider />
     </div>
