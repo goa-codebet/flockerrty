@@ -3,13 +3,14 @@ import cn from 'classnames';
 
 import './style.scss';
 import Search from '../search';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useRouteMatch } from 'react-router';
 
 const Header = () => {
   const history = useHistory();
-  const { q, id } = useParams();
+  const matchCategory = useRouteMatch('/category/:id');
+  const matchSearch = useRouteMatch('/category/:id');
 
-  const hasParams = () => q || id;
+  const hasParams = () => Boolean(matchCategory || matchSearch);
 
   return (
     <div className="Header">
@@ -17,13 +18,13 @@ const Header = () => {
         <div className="Header__text">
           <i
             className={cn('Header__text__back fas fa-chevron-circle-left', {
-              'Header__text__back--hide': hasParams(),
+              'Header__text__back--hide': !hasParams(),
             })}
             onClick={() => history.goBack()}
           />
           <p
             className={cn('Header__text__tagline', {
-              'Header__text__tagline--hide': !hasParams(),
+              'Header__text__tagline--hide': hasParams(),
             })}>
             Let's fight the virus by reducing crowding in our society
           </p>

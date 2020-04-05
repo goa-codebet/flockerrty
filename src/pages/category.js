@@ -6,6 +6,7 @@ import { useParams } from 'react-router';
 
 const CategoryPage = () => {
   const { id } = useParams();
+
   const NearbyPlacesView = props => {
     const { loading, data, error } = useQuery(gql`
       {
