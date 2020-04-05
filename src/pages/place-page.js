@@ -32,6 +32,14 @@ const PlacePage = () => {
       }
     }
   `);
+  
+  const [setFavorite] = useMutation(gql`
+    mutation SetFavorite($uuid: String!, $place_id: String!) {
+      setFavorite(uuid: $uuid place_id: $place_id) {
+        place_id
+      }
+    }
+  `);
 
   return (
     <div className="PlacePage container">
@@ -39,7 +47,14 @@ const PlacePage = () => {
         loading={loading}
         data={data}
         error={error}
-        onFavourite={handleOnFavourite}
+        onFavourite={(s,e) => {
+          setFavorite({
+            variables: {
+              uuid: "x",
+              place_id: id,
+            }
+          })
+        }}
         isFavourite={parseInt(2) === 2}
       />
       <Scheduler onScheduleTime={(s,e) => {
