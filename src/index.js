@@ -8,7 +8,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import './styles/base.scss';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
+  uri: 'https://flockerty-api.azurewebsites.net',
 });
 
 ReactDOM.render(
