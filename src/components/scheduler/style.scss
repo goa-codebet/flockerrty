@@ -1,0 +1,13 @@
+.Scheduler {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  grid-gap: 10px;
+
+  &__item {
+    border-radius: 10px;
+    background: red;
+    padding: 16px 0;
+    text-align: center;
+  }
+}

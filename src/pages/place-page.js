@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Place from '../components/place';
+import Scheduler from '../components/scheduler';
 
 const PlacePage = () => {
   const { id } = useParams();
@@ -8,6 +9,7 @@ const PlacePage = () => {
   return (
     <div className="PlacePage container">
       <Place id={id} />
+      <Scheduler />
     </div>
   );
 };
