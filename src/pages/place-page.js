@@ -8,7 +8,7 @@ const PlacePage = () => {
 
   return (
     <div className="PlacePage container">
-      <Place id={id} />
+      <Place onFavourite={handleOnFavourite} isFavourite={parseInt(2) === 2} />
       <Scheduler onScheduleTime={handleScheduleTime} />
     </div>
   );
@@ -16,6 +16,10 @@ const PlacePage = () => {
 
 const handleScheduleTime = date => {
   console.log('Booking date', date);
+};
+
+const handleOnFavourite = uuid => {
+  console.log('handleOnFavourite');
 };
 
 export default PlacePage;

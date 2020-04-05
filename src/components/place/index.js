@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
-const Place = () => (
+const Place = ({ onFavourite, isFavourite }) => (
   <div className="Place">
     <div className="Place__header">
       <div className="Place__header__content">
@@ -13,8 +13,14 @@ const Place = () => (
           KALMAR
         </div>
       </div>
-      <div className="Place__header__favourite">
-        <i className="far fa-heart"></i>
+      <div
+        className="Place__header__favourite"
+        onClick={() => onFavourite('2bUUID')}>
+        {isFavourite ? (
+          <i class="fas fa-heart"></i>
+        ) : (
+          <i className="far fa-heart"></i>
+        )}
       </div>
     </div>
   </div>
