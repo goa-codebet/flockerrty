@@ -6,10 +6,9 @@ import SliderItem from './slider-item';
 
 const Slider = ({ items }) => {
   return (
-    <div className="Slider section">
-      <div className="container">
-        <CategoryBar category="By Categories" link="See all" />
-      </div>
+    <div className="Slider section container">
+      <CategoryBar category="By Categories" link="See all" />
+
       <div className="Slider__track">
         {items &&
           items.map((item, i) => (
