@@ -9,9 +9,13 @@ const PlacePage = () => {
   return (
     <div className="PlacePage container">
       <Place id={id} />
-      <Scheduler />
+      <Scheduler onBookItem={handleBookItem} />
     </div>
   );
+};
+
+const handleBookItem = date => {
+  console.log('Booking date', date);
 };
 
 export default PlacePage;
