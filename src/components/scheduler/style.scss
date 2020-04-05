@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .Scheduler {
   margin-top: 16px;
   display: grid;
@@ -6,7 +8,7 @@
 
   &__item {
     border-radius: 10px;
-    background: red;
+    background: $primary-pink;
     padding: 16px 0;
     text-align: center;
   }
