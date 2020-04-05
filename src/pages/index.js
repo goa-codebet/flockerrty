@@ -129,23 +129,28 @@ const tags = [
 
 const categories = [
   {
+    label: 'Hospitals',
+    link: '/category/hospital',
+    imageUri: 'http://placekitten.com/g/100/100',
+  },
+  {
     label: 'Food stores',
-    link: '/category/123',
+    link: '/category/grocery_or_supermarket',
     imageUri: 'http://placekitten.com/g/100/100',
   },
   {
-    label: 'Public library',
-    link: '/category/123',
+    label: 'Pharmacies',
+    link: '/category/pharmacy',
     imageUri: 'http://placekitten.com/g/100/100',
   },
   {
-    label: 'Bank',
-    link: '/category/123',
+    label: 'Libraries',
+    link: '/category/library',
     imageUri: 'http://placekitten.com/g/100/100',
   },
   {
-    label: 'Store',
-    link: '/category/123',
+    label: 'Convenience stores',
+    link: '/category/convenience_store',
     imageUri: 'http://placekitten.com/g/100/100',
   },
 ];
