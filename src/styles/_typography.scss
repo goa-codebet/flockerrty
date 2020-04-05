@@ -12,13 +12,13 @@ $font-family: 'Mukta', serif;
 $base-font-size: 16px;
 
 // Paragraph Styles
-$paragraph-color: $text;
+$paragraph-color: $primary-text;
 $paragraph-size: rem(17px);
 $paragraph-line-height: 1.5em;
 $paragraph-margin: 20px;
 
 // Header Styles
-$header-color: $text;
+$header-color: $primary-text;
 $header-size: rem(40px);
 $header-line-height: 1.25em;
 $header-margin: $paragraph-margin * 1.2;
