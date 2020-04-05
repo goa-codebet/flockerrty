@@ -9,7 +9,7 @@ const Scheduler = ({
   onScheduleTime,
 }) => {
   const diff = 1000 * 60 * 60;
-  const bookingTimes = getDates({ start: new Date() });
+  const bookingTimes = getDates({ start });
 
   return (
     <div className="Scheduler">
@@ -17,7 +17,7 @@ const Scheduler = ({
         <div
           className="Scheduler__item"
           key={b.getTime()}
-          onClick={() => onScheduleTime(b)}>
+          onClick={() => onScheduleTime(b, new Date(b.getTime() + diff))}>
           {timeLabel(b)} - {timeLabel(new Date(b.getTime() + diff))}
         </div>
       ))}
