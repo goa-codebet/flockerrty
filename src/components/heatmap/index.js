@@ -43,7 +43,9 @@ const Square = ({ value }) => (
 const Legend = ({ hours }) => (
   <div className="Legend">
     {hours.map(hour => (
-      <div className="Legend__hour">{hour}</div>
+      <div className="Legend__hour">
+        <span>{hour}</span>
+      </div>
     ))}
   </div>
 );
