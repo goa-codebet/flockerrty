@@ -11,11 +11,6 @@ $border-color: rgba($secondary-pink, 0.13);
   border-radius: $border-radius;
   border: 1px solid $border-color;
 
-  &--hasresult {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
   &__form {
     display: flex;
     width: 100%;
@@ -47,47 +42,6 @@ $border-color: rgba($secondary-pink, 0.13);
       align-self: center;
       font-size: 18px;
       color: $primary-pink;
-    }
-  }
-
-  &__result {
-    position: absolute;
-    display: none;
-    bottom: 0;
-    left: 0px;
-    width: calc(100% + 2px);
-    margin: 0;
-    padding: 0px $padding-x 5px;
-    transform: translate(-1px, 100%);
-    background-color: #fff;
-    border: 1px solid $border-color;
-    border-top: 1px solid $border-color;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-
-    .Search--hasresult & {
-      display: block;
-    }
-
-    > ul {
-      margin: 0 0;
-      padding: 5px 0 0 0;
-    }
-
-    &__item {
-      margin: 0;
-      list-style-type: none;
-      padding: 10px 0;
-      border-bottom: 1px solid $border-color;
-
-      a {
-        color: $primary-text;
-        text-decoration: none;
-      }
-
-      &:last-child {
-        border-bottom: none;
-      }
     }
   }
 }
