@@ -9,12 +9,12 @@ const PlacePage = () => {
   return (
     <div className="PlacePage container">
       <Place id={id} />
-      <Scheduler onBookItem={handleBookItem} />
+      <Scheduler onScheduleTime={handleScheduleTime} />
     </div>
   );
 };
 
-const handleBookItem = date => {
+const handleScheduleTime = date => {
   console.log('Booking date', date);
 };
 
