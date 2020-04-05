@@ -4,6 +4,7 @@ import Place from '../components/place';
 import Scheduler from '../components/scheduler';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
+import { useMutation } from '@apollo/react-hooks';
 
 const PlacePage = () => {
   const { id } = useParams();
@@ -23,6 +24,22 @@ const PlacePage = () => {
       }
     }
   `);
+  
+  const [setSlot] = useMutation(gql`
+    mutation SetSlot($uuid: String!, $place_id: String!, $slotStart: Int!, $slotEnd: Int!) {
+      setSlot(uuid: $uuid place_id: $place_id slotStart: $slotStart slotEnd: $slotEnd) {
+        place_id
+      }
+    }
+  `);
+  
+  const [setFavorite] = useMutation(gql`
+    mutation SetFavorite($uuid: String!, $place_id: String!) {
+      setFavorite(uuid: $uuid place_id: $place_id) {
+        place_id
+      }
+    }
+  `);
 
   return (
     <div className="PlacePage container">
@@ -30,17 +47,30 @@ const PlacePage = () => {
         loading={loading}
         data={data}
         error={error}
-        onFavourite={handleOnFavourite}
+        onFavourite={(s,e) => {
+          setFavorite({
+            variables: {
+              uuid: "x",
+              place_id: id,
+            }
+          })
+        }}
         isFavourite={parseInt(2) === 2}
       />
-      <Scheduler onScheduleTime={handleScheduleTime} />
+      <Scheduler onScheduleTime={(s,e) => {
+        setSlot({ 
+          variables: {
+            uuid: "x",
+            place_id: id,
+            slotStart: s.getTime()/1000,
+            slotEnd: e.getTime()/1000,
+          }
+        })
+      }} />
     </div>
   );
 };
 
-const handleScheduleTime = date => {
-  console.log('Booking date', date);
-};
 
 const handleOnFavourite = uuid => {
   console.log('handleOnFavourite');

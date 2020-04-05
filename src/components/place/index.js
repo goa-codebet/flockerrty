@@ -5,7 +5,7 @@ import './style.scss';
 const Place = ({ data, onFavourite, isFavourite }) => {
   if (!data) return null;
 
-  const { name, address, city, categories } = data.place;
+  const { name, address, city, categories, place_id } = data.place;
 
   return (
     <div className="Place">
@@ -20,7 +20,7 @@ const Place = ({ data, onFavourite, isFavourite }) => {
         </div>
         <div
           className="Place__header__favourite"
-          onClick={() => onFavourite('2bUUID')}>
+          onClick={() => onFavourite(place_id)}>
           {isFavourite ? (
             <i className="fas fa-heart"></i>
           ) : (
