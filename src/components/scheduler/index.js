@@ -6,7 +6,7 @@ import './style.scss';
 const Scheduler = ({
   start = new Date(),
   SAME_DATA_AS_HEAT_MAP,
-  onBookTime,
+  onScheduleTime,
 }) => {
   const diff = 1000 * 60 * 60;
   const bookingTimes = getDates({ start: new Date() });
@@ -17,7 +17,7 @@ const Scheduler = ({
         <div
           className="Scheduler__item"
           key={b.getTime()}
-          onClick={() => onBookTime(b)}>
+          onClick={() => onScheduleTime(b)}>
           {timeLabel(b)} - {timeLabel(new Date(b.getTime() + diff))}
         </div>
       ))}
