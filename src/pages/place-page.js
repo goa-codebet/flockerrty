@@ -50,7 +50,7 @@ const PlacePage = () => {
         onFavourite={(s,e) => {
           setFavorite({
             variables: {
-              uuid: "y",
+              uuid: window.uuid,
               place_id: id,
             }
           })
@@ -60,7 +60,7 @@ const PlacePage = () => {
       <Scheduler onScheduleTime={(s,e) => {
         setSlot({ 
           variables: {
-            uuid: "y",
+            uuid: window.uuid,
             place_id: id,
             slotStart: (s.getTime()/1000)+7200,
             slotEnd: (e.getTime()/1000)+7200,

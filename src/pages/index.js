@@ -39,7 +39,7 @@ const NearbyPlacesView = props => {
 const LatestPlacesView = props => {
   const { loading, data, error } = useQuery(gql`
     {
-      latest(uuid: "x") {
+      latest(uuid: "${window.uuid}") {
         name
         city
         photo
@@ -66,7 +66,7 @@ const LatestPlacesView = props => {
 const FavoritePlacesView = props => {
   const { loading, data, error } = useQuery(gql`
     {
-      favorites(uuid: "x") {
+      favorites(uuid: "${window.uuid}") {
         name
         city
         photo
