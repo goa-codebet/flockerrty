@@ -7,6 +7,7 @@ import TabView from '../components/tab-view';
 import PlacesView from '../components/places-view';
 import PlaceholderImage from '../images/placeholder.png';
 import Slider from '../components/slider';
+import TagList from '../components/tag-list';
 
 const NearbyPlacesView = props => {
   const { loading, data, error } = useQuery(gql`{
@@ -62,12 +63,63 @@ const tabViews = [
   },
 ];
 
+const tags = [
+  {
+    label: 'Nybro',
+    link: '/place/123',
+  },
+  {
+    label: 'Trekanten',
+    link: '/place/123',
+  },
+  {
+    label: 'Alstermo',
+    link: '/place/123',
+  },
+  {
+    label: 'Emmaboda',
+    link: '/place/123',
+  },
+  {
+    label: 'Oskarshamn',
+    link: '/place/123',
+  },
+  {
+    label: 'Torsås',
+    link: '/place/123',
+  },
+];
+
+const categories = [
+  {
+    label: 'Food stores',
+    link: '/category/123',
+    imageUri: 'http://placekitten.com/g/100/100',
+  },
+  {
+    label: 'Public library',
+    link: '/category/123',
+    imageUri: 'http://placekitten.com/g/100/100',
+  },
+  {
+    label: 'Bank',
+    link: '/category/123',
+    imageUri: 'http://placekitten.com/g/100/100',
+  },
+  {
+    label: 'Store',
+    link: '/category/123',
+    imageUri: 'http://placekitten.com/g/100/100',
+  },
+];
+
 export default function IndexPage() {
   return (
     <div>
       <Header />
       <TabView views={tabViews} />
-      <Slider />
+      <Slider items={categories} />
+      <TagList tags={tags} />
     </div>
   );
 }
