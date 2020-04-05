@@ -1,6 +1,6 @@
 export default ({
   start = new Date(),
-  end = getDateWithHour(22),
+  end = new Date(Date.now() + (12 * 3600 * 1000)),
   diff = 60,
 }) => {
   const coeff = 1000 * 60 * diff;
