@@ -2,8 +2,13 @@
 @import '../../styles/typography';
 
 @mixin square {
-  width: 18px;
+  flex-grow: 1;
   height: 18px;
+  border-right: 1px solid #fff;
+
+  &:last-child {
+    border-right: none;
+  }
 }
 
 .Heatmap {
@@ -37,8 +42,24 @@
   color: $tertiary-text-color;
 
   &__hour {
+    position: relative;
     @include square;
     font-size: rem(10px);
     text-align: center;
+
+    &:nth-child(3n + 2),
+    &:nth-child(3n + 3) {
+      visibility: hidden;
+    }
+    &:last-child {
+      visibility: visible;
+    }
+
+    span {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
   }
 }

@@ -3,8 +3,16 @@
 @import 'colors.scss';
 
 .container {
-  margin: 0 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   max-width: 100%;
+}
+
+.section {
+  margin-bottom: 35px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 body {

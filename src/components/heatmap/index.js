@@ -17,19 +17,17 @@ const mock = {
   '18': 55,
 };
 
-const Heatmap = ({ data = mock }) => {
-  const hours = Object.keys(data).sort();
-  const people = hours.map(hour => mock[hour]);
-  const max = Math.max(...people);
+const Heatmap = ({ items }) => {
+  const max = items.reduce((acc, item) => acc+item.value, 0)
 
   return (
     <div className="Heatmap">
       <div className="Heatmap__squares">
-        {people.map(value => (
-          <Square value={value / max} />
+        {items.map(item => (
+          <Square value={max > 0 ? item.value / max : 0} key={`square-${item.time}`} />
         ))}
       </div>
-      <Legend hours={hours} />
+      <Legend hours={items.map(item => item.time)} />
     </div>
   );
 };
@@ -42,8 +40,10 @@ const Square = ({ value }) => (
 
 const Legend = ({ hours }) => (
   <div className="Legend">
-    {hours.map(hour => (
-      <div className="Legend__hour">{hour}</div>
+    {hours.map((hour, i) => (
+      <div className="Legend__hour" key={`${hour}-${i}`}>
+        <span>{hour}</span>
+      </div>
     ))}
   </div>
 );

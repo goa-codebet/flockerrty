@@ -4,7 +4,6 @@
 $border-radius: 4px;
 
 .Slider {
-  overflow: visible;
   &__header {
     display: flex;
     text-transform: uppercase;
@@ -22,16 +21,22 @@ $border-radius: 4px;
   &__track {
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
+    padding: 15px 10px;
     -webkit-overflow-scrolling: touch;
   }
 
   &__item {
-    margin-right: 10px;
+    margin-right: 15px;
     border-radius: $border-radius;
 
     &:last-child {
       margin-right: 0;
+      padding-right: 15px;
+    }
+
+    &__link {
+      text-decoration: none;
     }
 
     &__inner {
@@ -41,13 +46,14 @@ $border-radius: 4px;
       height: 100px;
       width: 100px;
       padding: 4px;
-      background-size: cover;
       overflow: hidden;
+      border-radius: $border-radius;
+      background-size: cover;
+      background-repeat: no-repeat;
 
       &::before {
         content: '';
         position: absolute;
-        border-radius: $border-radius;
         height: 100%;
         width: 100%;
         top: 0;
@@ -57,7 +63,6 @@ $border-radius: 4px;
           rgba(0, 0, 0, 0.7) 0%,
           rgba(0, 0, 0, 0) 100%
         );
-        overflow: hidden;
       }
     }
 
@@ -67,5 +72,13 @@ $border-radius: 4px;
       font-weight: 700;
       z-index: 5;
     }
+  }
+
+  .Category-bar {
+    margin-bottom: 5px;
+  }
+
+  &.section {
+    margin-bottom: 20px;
   }
 }

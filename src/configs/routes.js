@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../components/header';
 import IndexPage from '../pages/index';
 import PlacePage from '../pages/place-page';
+import SearchPage from '../pages/search';
 
 const routes = [
   {
@@ -13,6 +14,10 @@ const routes = [
   {
     path: '/place/:id',
     component: PlacePage,
+  },
+  {
+    path: '/search/:q',
+    component: SearchPage,
   },
 ];
 
