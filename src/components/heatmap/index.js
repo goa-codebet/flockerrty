@@ -25,8 +25,8 @@ const Heatmap = ({ data = mock }) => {
   return (
     <div className="Heatmap">
       <div className="Heatmap__squares">
-        {people.map(value => (
-          <Square value={value / max} />
+        {people.map((value, i) => (
+          <Square value={value / max} key={`square-${i}`} />
         ))}
       </div>
       <Legend hours={hours} />
@@ -42,8 +42,8 @@ const Square = ({ value }) => (
 
 const Legend = ({ hours }) => (
   <div className="Legend">
-    {hours.map(hour => (
-      <div className="Legend__hour">
+    {hours.map((hour, i) => (
+      <div className="Legend__hour" key={`${hour}-${i}`}>
         <span>{hour}</span>
       </div>
     ))}

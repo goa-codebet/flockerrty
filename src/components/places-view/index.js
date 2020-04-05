@@ -5,8 +5,8 @@ import './style.scss';
 
 const PlacesView = ({ items }) => (
   <div className="PlacesView container">
-    {items.map(item => (
-      <PlaceListItem {...item} />
+    {items.map((item, i) => (
+      <PlaceListItem {...item} key={`placeview-${i}`} />
     ))}
   </div>
 );

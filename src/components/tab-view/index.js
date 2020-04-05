@@ -14,7 +14,8 @@ const TabView = ({ views }) => {
             className={cn('TabView__menu__item', {
               'TabView__menu__item--active': activeTabIndex === i,
             })}
-            onClick={() => setActiveTabIndex(i)}>
+            onClick={() => setActiveTabIndex(i)}
+            key={`${m.label}-${i}`}>
             {m.label}
           </div>
         ))}
