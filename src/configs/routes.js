@@ -5,6 +5,7 @@ import IndexPage from '../pages/index';
 import PlacePage from '../pages/place-page';
 import SearchPage from '../pages/search';
 import CategoryPage from '../pages/category';
+import LocationPage from '../pages/location';
 
 const routes = [
   {
@@ -23,6 +24,10 @@ const routes = [
   {
     path: '/category/:id',
     component: CategoryPage,
+  },
+  {
+    path: '/location/:id',
+    component: LocationPage,
   },
 ];
 

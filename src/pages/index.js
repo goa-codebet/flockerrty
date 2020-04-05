@@ -103,27 +103,27 @@ const tabViews = [
 const tags = [
   {
     label: 'Nybro',
-    link: '/place/123',
+    link: '/location/56.744821, 15.908595',
   },
   {
-    label: 'Trekanten',
-    link: '/place/123',
+    label: 'Växjö',
+    link: '/location/56.881060, 14.806844',
   },
   {
-    label: 'Alstermo',
-    link: '/place/123',
+    label: 'Borgholm',
+    link: '/location/56.880515, 16.656376',
   },
   {
     label: 'Emmaboda',
-    link: '/place/123',
+    link: '/location/56.630249, 15.539332',
   },
   {
     label: 'Oskarshamn',
-    link: '/place/123',
+    link: '/location/57.266057, 16.447072',
   },
   {
     label: 'Torsås',
-    link: '/place/123',
+    link: '/location/56.412667, 15.998298',
   },
 ];
 

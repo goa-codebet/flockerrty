@@ -8,9 +8,11 @@ import { useHistory, useRouteMatch } from 'react-router';
 const Header = () => {
   const history = useHistory();
   const matchCategory = useRouteMatch('/category/:id');
-  const matchSearch = useRouteMatch('/category/:id');
+  const matchLocation = useRouteMatch('/location/:id');
+  const matchSearch = useRouteMatch('/search/:q');
 
-  const hasParams = () => Boolean(matchCategory || matchSearch);
+  const hasParams = () =>
+    Boolean(matchCategory || matchSearch || matchLocation);
 
   return (
     <div className="Header">
