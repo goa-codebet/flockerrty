@@ -9,11 +9,12 @@ const Place = () => (
         <span>Livsmedelsbutik</span>
         <h4>Ica MAXI Stormarknad</h4>
         <div>
-          <i class="fas fa-map-marker-alt"></i> Verkstadsvägen 2, 392 39 KALMAR
+          <i className="fas fa-map-marker-alt"></i> Verkstadsvägen 2, 392 39
+          KALMAR
         </div>
       </div>
       <div className="Place__header__favourite">
-        <i class="far fa-heart"></i>
+        <i className="far fa-heart"></i>
       </div>
     </div>
   </div>

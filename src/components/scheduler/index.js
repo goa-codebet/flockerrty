@@ -3,16 +3,22 @@ import getDates from '../../utils/get-dates';
 
 import './style.scss';
 
-const Scheduler = ({ start = new Date(), SAME_DATA_AS_HEAT_MAP }) => {
+const Scheduler = ({
+  start = new Date(),
+  SAME_DATA_AS_HEAT_MAP,
+  onBookTime,
+}) => {
+  const diff = 1000 * 60 * 60;
   const bookingTimes = getDates({ start: new Date() });
-
-  console.log(bookingTimes);
 
   return (
     <div className="Scheduler">
       {bookingTimes.map(b => (
-        <div className="Scheduler__item">
-          {timeLabel(b)} - {timeLabel(new Date(b.getTime() + 1000 * 60 * 30))}
+        <div
+          className="Scheduler__item"
+          key={b.getTime()}
+          onClick={() => onBookTime(b)}>
+          {timeLabel(b)} - {timeLabel(new Date(b.getTime() + diff))}
         </div>
       ))}
     </div>

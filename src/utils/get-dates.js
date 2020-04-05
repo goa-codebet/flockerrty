@@ -1,7 +1,7 @@
 export default ({
   start = new Date(),
   end = getDateWithHour(22),
-  diff = 30,
+  diff = 60,
 }) => {
   const coeff = 1000 * 60 * diff;
   let startTime = new Date(Math.round(start.getTime() / coeff) * coeff);
