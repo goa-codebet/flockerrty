@@ -38,14 +38,12 @@
 .Legend {
   display: flex;
   justify-content: space-between;
-  margin-top: 3px;
   color: $tertiary-text-color;
 
   &__hour {
     position: relative;
-    @include square;
     font-size: rem(10px);
-    text-align: center;
+    flex: 1;
 
     &:nth-child(3n + 2),
     &:nth-child(3n + 3) {
@@ -53,13 +51,6 @@
     }
     &:last-child {
       visibility: visible;
-    }
-
-    span {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
     }
   }
 }

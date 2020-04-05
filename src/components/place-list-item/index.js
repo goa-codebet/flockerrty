@@ -1,5 +1,6 @@
 import React from 'react';
 import Heatmap from '../heatmap';
+import { Link } from 'react-router-dom';
 import { ShineRect, ShineCircle } from '../shine';
 import PlaceholderImage from '../../images/placeholder.png';
 
@@ -24,8 +25,8 @@ export const SkeletonPlaceListItem = ({ error }) => (
   </div>
 );
 
-const PlaceListItem = ({ photo, name, city, hours, heatmap }) => (
-  <div className="PlaceListItem shadow">
+const PlaceListItem = ({ photo, name, place_id, city, hours, heatmap }) => (
+  <Link className="PlaceListItem shadow" to={"/place/"+place_id}>
     <div className="PlaceListItem__thumbnail">
       <img src={photo || PlaceholderImage} loading="lazy" alt={name} />
     </div>
@@ -41,7 +42,7 @@ const PlaceListItem = ({ photo, name, city, hours, heatmap }) => (
         <Heatmap items={heatmap} />
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 export default PlaceListItem;
