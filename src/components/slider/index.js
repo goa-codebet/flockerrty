@@ -4,35 +4,22 @@ import CategoryBar from '../category-bar';
 import './style.scss';
 import SliderItem from './slider-item';
 
-const Slider = () => {
+const Slider = ({ items }) => {
   return (
-    <div className="Slider container">
-      <CategoryBar category="By Categories" link="See all" />
+    <div className="Slider section">
+      <div className="container">
+        <CategoryBar category="By Categories" link="See all" />
+      </div>
       <div className="Slider__track">
-        <SliderItem
-          background="http://placekitten.com/g/100/100"
-          label="Farmacy"
-        />
-        <SliderItem
-          background="http://placekitten.com/g/100/100"
-          label="Food stores"
-        />
-        <SliderItem
-          background="http://placekitten.com/g/100/100"
-          label="Public library"
-        />
-        <SliderItem
-          background="http://placekitten.com/g/100/100"
-          label="Bank"
-        />
-        <SliderItem
-          background="http://placekitten.com/g/100/100"
-          label="Bank"
-        />
-        <SliderItem
-          background="http://placekitten.com/g/100/100"
-          label="Store"
-        />
+        {items &&
+          items.map((item, i) => (
+            <SliderItem
+              background={item.imageUri}
+              label={item.label}
+              link={item.link}
+              key={`${item.link}-${i}`}
+            />
+          ))}
       </div>
     </div>
   );
