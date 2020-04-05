@@ -80,6 +80,11 @@ $border-color: rgba($secondary-pink, 0.13);
       padding: 10px 0;
       border-bottom: 1px solid $border-color;
 
+      a {
+        color: $primary-text;
+        text-decoration: none;
+      }
+
       &:last-child {
         border-bottom: none;
       }

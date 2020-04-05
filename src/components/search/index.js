@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import cn from 'classnames';
 
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -32,8 +33,10 @@ const Search = () => {
       </div>
       <div className="Search__result shadow">
         <ul>
-          {searchResult.map(r => (
-            <li className="Search__result__item">placeholder: {r}</li>
+          {searchResult.map((r, i) => (
+            <li className="Search__result__item" key={`result-${i}`}>
+              <Link to="/place/">{r}</Link>
+            </li>
           ))}
         </ul>
       </div>
