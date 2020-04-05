@@ -23,7 +23,7 @@ const PlacesView = ({ data, loading, error }) => {
 
   return (
     <div className="PlacesView container">
-      { data.map(item => <PlaceListItem {...item} />) }
+      { data.map(item => <PlaceListItem {...item} key={item.place_id} />) }
     </div>
   );
 }

@@ -24,7 +24,7 @@ const Heatmap = ({ items }) => {
     <div className="Heatmap">
       <div className="Heatmap__squares">
         {items.map(item => (
-          <Square value={item.value / max} />
+          <Square value={item.value / max} key={`square-${item.time}`} />
         ))}
       </div>
       <Legend hours={items.map(item => item.time)} />
@@ -40,8 +40,8 @@ const Square = ({ value }) => (
 
 const Legend = ({ hours }) => (
   <div className="Legend">
-    {hours.map(hour => (
-      <div className="Legend__hour">
+    {hours.map((hour, i) => (
+      <div className="Legend__hour" key={`${hour}-${i}`}>
         <span>{hour}</span>
       </div>
     ))}
