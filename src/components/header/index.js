@@ -9,10 +9,11 @@ const Header = () => {
   const history = useHistory();
   const matchCategory = useRouteMatch('/category/:id');
   const matchLocation = useRouteMatch('/location/:id');
+  const matchPlace = useRouteMatch('/place/:id');
   const matchSearch = useRouteMatch('/search/:q');
 
   const hasParams = () =>
-    Boolean(matchCategory || matchSearch || matchLocation);
+    Boolean(matchCategory || matchSearch || matchLocation || matchPlace);
 
   return (
     <div className="Header">
