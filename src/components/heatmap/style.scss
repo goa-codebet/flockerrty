@@ -1,6 +1,14 @@
 @import '../../styles/colors';
+@import '../../styles/typography';
+
+@mixin square {
+  width: 18px;
+  height: 18px;
+}
 
 .Heatmap {
+  margin-top: 5px;
+
   &__squares {
     display: flex;
     justify-content: space-between;
@@ -8,8 +16,7 @@
 }
 
 .Square {
-  width: 18px;
-  height: 18px;
+  @include square;
   background: $light-gray;
   position: relative;
 
@@ -20,5 +27,18 @@
     width: 100%;
     height: 100%;
     background: #ff0000;
+  }
+}
+
+.Legend {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3px;
+  color: $tertiary-text-color;
+
+  &__hour {
+    @include square;
+    font-size: rem(10px);
+    text-align: center;
   }
 }
