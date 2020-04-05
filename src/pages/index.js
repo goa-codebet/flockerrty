@@ -5,6 +5,7 @@ import TabView from '../components/tab-view';
 import PlacesView from '../components/places-list-view';
 import Slider from '../components/slider';
 import TagList from '../components/tag-list';
+import EmptyResults from '../components/empty-results';
 
 const NearbyPlacesView = props => {
   const { loading, data, error } = useQuery(gql`
@@ -50,13 +51,15 @@ const LatestPlacesView = props => {
       }
     }
   `);
-  return (
+  return data && data.latest && data.latest.length > 0 ? (
     <PlacesView
       {...props}
       loading={loading}
       error={error}
       data={data ? data.latest : []}
     />
+  ) : (
+    <EmptyResults />
   );
 };
 
@@ -75,13 +78,15 @@ const FavoritePlacesView = props => {
       }
     }
   `);
-  return (
+  return data && data.favorites && data.favorites.length > 0 ? (
     <PlacesView
       {...props}
       loading={loading}
       error={error}
       data={data ? data.favorites : []}
     />
+  ) : (
+    <EmptyResults />
   );
 };
 
