@@ -1,0 +1,19 @@
+.Tag-list {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    border-radius: 6px;
+    padding: 13px 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-right: 12px;
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}
