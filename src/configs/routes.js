@@ -4,6 +4,7 @@ import Header from '../components/header';
 import IndexPage from '../pages/index';
 import PlacePage from '../pages/place-page';
 import SearchPage from '../pages/search';
+import CategoryPage from '../pages/category';
 
 const routes = [
   {
@@ -18,6 +19,10 @@ const routes = [
   {
     path: '/search/:q',
     component: SearchPage,
+  },
+  {
+    path: '/category/:id',
+    component: CategoryPage,
   },
 ];
 

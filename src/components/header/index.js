@@ -7,7 +7,9 @@ import { useHistory, useParams } from 'react-router';
 
 const Header = () => {
   const history = useHistory();
-  const { q } = useParams();
+  const { q, id } = useParams();
+
+  const hasParams = () => q || id;
 
   return (
     <div className="Header">
@@ -15,13 +17,13 @@ const Header = () => {
         <div className="Header__text">
           <i
             className={cn('Header__text__back fas fa-chevron-circle-left', {
-              'Header__text__back--hide': !q,
+              'Header__text__back--hide': hasParams(),
             })}
             onClick={() => history.goBack()}
           />
           <p
             className={cn('Header__text__tagline', {
-              'Header__text__tagline--hide': q,
+              'Header__text__tagline--hide': !hasParams(),
             })}>
             Let's fight the virus by reducing crowding in our society
           </p>
