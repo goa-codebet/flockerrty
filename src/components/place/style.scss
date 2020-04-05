@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+@import '../../styles/typography';
+
+.Place {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__content {
+      span {
+        font-size: rem(13px);
+        color: $tertiary-text-color;
+      }
+
+      h4 {
+        margin: 5px 0;
+      }
+
+      div:last-child {
+        i {
+          margin-right: 3px;
+        }
+      }
+    }
+
+    &__favourite {
+      padding: 10px;
+      color: $secondary-pink;
+      font-size: rem(28px);
+    }
+  }
+}
