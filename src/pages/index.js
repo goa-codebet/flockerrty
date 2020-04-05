@@ -1,49 +1,64 @@
 import React from 'react';
+import { graphql } from '@apollo/react-hoc';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
 import Header from '../components/header';
 import TabView from '../components/tab-view';
 import PlacesView from '../components/places-view';
 import PlaceholderImage from '../images/placeholder.png';
 import Slider from '../components/slider';
 
-const latestPlaces = [
-  {
-    thumbnail: PlaceholderImage,
-    name: 'ICA Maxi',
-    city: 'Kalmar',
-    hours: '6-23',
-  },
-  {
-    thumbnail: PlaceholderImage,
-    name: 'Stora Coop',
-    city: 'Kalmar',
-    hours: '6-23',
-  },
-  {
-    thumbnail: PlaceholderImage,
-    name: 'Lidl Mat å sånt',
-    city: 'Lenhovda',
-    hours: '7-21',
-  },
-  {
-    thumbnail: PlaceholderImage,
-    name: 'Willys',
-    city: 'Kalmar',
-    hours: '8-20',
-  },
-];
+const NearbyPlacesView = props => {
+  const { loading, data, error } = useQuery(gql`{
+    nearby(location:"56.6702937,16.2976897" radius: 50000 category:"supermarket") {
+      name
+      city
+      photo
+      heatmap
+      place_id
+    }
+  }`);
+  return <PlacesView { ...props } loading={loading} error={error} data={data ? data.nearby : []} />
+}
+
+const LatestPlacesView = props => {
+  const { loading, data, error } = useQuery(gql`{
+    latest(uuid: "x") {
+      name
+      city
+      photo
+      heatmap
+      place_id
+    }
+  }`);
+  return <PlacesView { ...props } loading={loading} error={error} data={data ? data.latest : []} />
+}
+
+const FavoritePlacesView = props => {
+  const { loading, data, error } = useQuery(gql`{
+    favorites(uuid: "x") {
+      name
+      city
+      photo
+      heatmap
+      place_id
+    }
+  }`);
+  return <PlacesView { ...props } loading={loading} error={error} data={data ? data.favorites : []} />
+}
 
 const tabViews = [
   {
     label: 'Latest',
-    component: <PlacesView items={latestPlaces} />,
+    component: <LatestPlacesView />,
   },
   {
     label: 'Favourites',
-    component: <h2>Favourites</h2>,
+    component: <FavoritePlacesView />,
   },
   {
     label: 'Nearby',
-    component: <h2>Nearby</h2>,
+    component: <NearbyPlacesView />,
   },
 ];
 

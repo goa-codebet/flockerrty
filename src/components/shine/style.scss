@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+
+.Shine {
+  background-image: linear-gradient(90deg, $light-gray 0px, $background 40px, $light-gray 80px);
+  background-size: 200%;
+  animation: shine 2s infinite;
+  border-radius: 3px;
+  
+  &--circle {
+    border-radius: 50%;
+  }
+  
+  &--error {
+    border: 2px solid $error;
+    animation: none;
+  }
+}
+
+$avatar-offset: 11%;
+@keyframes shine {
+  0% {
+    background-position: 100% + $avatar-offset
+  }
+  100% {
+    background-position: -100% + $avatar-offset
+  }
+}
