@@ -5,7 +5,7 @@ import './style.scss';
 
 const SkeletonPlacesView = ({ error }) => (
   <div className="PlacesView container">
-    {[1, 2, 3, 4].map((item, i) => (
+    {[1, 2, 3, 4].map(item => (
       <SkeletonPlaceListItem error={error} key={`${item}`} />
     ))}
   </div>
