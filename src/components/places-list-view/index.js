@@ -5,27 +5,26 @@ import './style.scss';
 
 const SkeletonPlacesView = ({ error }) => (
   <div className="PlacesView container">
-    {[1,2,3,4].map(item => (
-      <SkeletonPlaceListItem error={error} />
+    {[1, 2, 3, 4].map((item, i) => (
+      <SkeletonPlaceListItem error={error} key={`${item}`} />
     ))}
   </div>
-)
+);
 
 const PlacesView = ({ data, loading, error }) => {
-  if (loading)
-    return <SkeletonPlacesView error={error} />;
+  if (loading) return <SkeletonPlacesView error={error} />;
 
-  if (error)
-    return <SkeletonPlacesView error={error} />;
-    
-  if (!data)
-    return null;
+  if (error) return <SkeletonPlacesView error={error} />;
+
+  if (!data) return null;
 
   return (
     <div className="PlacesView container">
-      { data.map(item => <PlaceListItem {...item} key={item.place_id} />) }
+      {data.map(item => (
+        <PlaceListItem {...item} key={item.place_id} />
+      ))}
     </div>
   );
-}
+};
 
 export default PlacesView;
