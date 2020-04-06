@@ -1,27 +1,20 @@
 @import '../../styles/colors';
 @import '../../styles/typography';
 
-@mixin square {
-  flex-grow: 1;
-  height: 18px;
-  border-right: 1px solid #fff;
-
-  &:last-child {
-    border-right: none;
-  }
-}
-
 .Heatmap {
   margin-top: 5px;
 
   &__squares {
     display: flex;
-    justify-content: space-between;
+    .Square {
+      margin: 0 1px;
+    }
   }
 }
 
 .Square {
-  @include square;
+  width: 14px;
+  height: 14px;
   background: $light-gray;
   position: relative;
 
@@ -37,14 +30,12 @@
 
 .Legend {
   display: flex;
-  justify-content: space-between;
   color: $tertiary-text-color;
 
   &__hour {
-    position: relative;
+    width: 14px;
+    margin: 0 1px;
     font-size: rem(10px);
-    flex: 1;
-    padding-bottom: 12px;
 
     &:nth-child(3n + 2),
     &:nth-child(3n + 3) {
@@ -52,13 +43,6 @@
     }
     &:last-child {
       visibility: visible;
-    }
-
-    span {
-      position: absolute;
-      top: 3px;
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
 }

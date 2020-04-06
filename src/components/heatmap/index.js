@@ -1,21 +1,7 @@
 import React from 'react';
+import { getDates, timeLabel } from '../../utils/slots';
 
 import './style.scss';
-
-const mock = {
-  '06': 0,
-  '07': 12,
-  '08': 29,
-  '09': 38,
-  '10': 19,
-  '11': 20,
-  '12': 59,
-  '14': 2,
-  '15': 13,
-  '16': 4,
-  '17': 23,
-  '18': 55,
-};
 
 const Heatmap = ({ items }) => {
   const max = items.reduce((acc, item) => acc+item.value, 0)

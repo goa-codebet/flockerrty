@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
-import getDates from '../../utils/get-dates';
+import { getDates, timeLabel } from '../../utils/slots';
 
 import './style.scss';
 
@@ -9,8 +9,10 @@ const Scheduler = ({
   heatmap = [],
   loading,
   onScheduleTime,
+  setSlotData,
+  setSlotLoading,
 }) => {
-  
+  const [selected, setSelected] = useState(null)
   if (loading) 
     return null;
   
@@ -26,10 +28,11 @@ const Scheduler = ({
           <div
             className={cn('Scheduler__item shadow', {
               'Scheduler__item--closed': false,
-              'Scheduler__item--selected': false,
+              'Scheduler__item--selected': selected && selected.getTime() === time.getTime(),
+              'Scheduler__item--loading': selected && selected.getTime() === time.getTime() && setSlotLoading,
             })}
             key={time.getTime()}
-            onClick={() => onScheduleTime(time, new Date(time.getTime() + diff))}>
+            onClick={() => {setSelected(time);onScheduleTime(time, new Date(time.getTime() + diff))}}>
             <div className="Scheduler__item__bg" style={{opacity:max > 0 ? item.value / max : 0}} />
             {timeLabel(time)} - {timeLabel(new Date(time.getTime() + diff))}
           </div>
@@ -38,8 +41,5 @@ const Scheduler = ({
     </div>
   );
 };
-
-const timeLabel = date =>
-  `${date.getHours()}:${date.getMinutes() < 10 ? '0' : ''}${date.getMinutes()}`;
 
 export default Scheduler;

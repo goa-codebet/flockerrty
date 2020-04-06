@@ -25,10 +25,12 @@ const PlacePage = () => {
     }
   `);
   
-  const [setSlot] = useMutation(gql`
+  const [setSlot, { loading: setSlotLoading, data: setSlotData }] = useMutation(gql`
     mutation SetSlot($uuid: String!, $place_id: String!, $slotStart: Int!, $slotEnd: Int!) {
       setSlot(uuid: $uuid place_id: $place_id slotStart: $slotStart slotEnd: $slotEnd) {
         place_id
+        start
+        end
       }
     }
   `);
@@ -58,13 +60,13 @@ const PlacePage = () => {
         isFavourite={parseInt(2) === 2}
       />
       
-      <Scheduler heatmap={data?.place?.heatmap} loading={loading} onScheduleTime={(s,e) => {
+      <Scheduler heatmap={data?.place?.heatmap} loading={loading} setSlotData={setSlotData} setSlotLoading={setSlotLoading} onScheduleTime={(s,e) => {
         setSlot({ 
           variables: {
             uuid: window.uuid,
             place_id: id,
-            slotStart: (s.getTime()/1000)+7200,
-            slotEnd: (e.getTime()/1000)+7200,
+            slotStart: (s.getTime()/1000),
+            slotEnd: (e.getTime()/1000),
           }
         })
       }} />
