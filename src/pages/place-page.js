@@ -57,7 +57,8 @@ const PlacePage = () => {
         }}
         isFavourite={parseInt(2) === 2}
       />
-      <Scheduler onScheduleTime={(s,e) => {
+      
+      <Scheduler heatmap={data?.place?.heatmap} loading={loading} onScheduleTime={(s,e) => {
         setSlot({ 
           variables: {
             uuid: window.uuid,

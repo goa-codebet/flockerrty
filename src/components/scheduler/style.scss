@@ -4,12 +4,23 @@
   margin-top: 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 20px;
 
   &__item {
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
-    background: $primary-pink;
     padding: 16px 0;
     text-align: center;
+    
+    &__bg {
+      background: $dark-pink;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      position: absolute;
+    }
   }
 }
