@@ -6,12 +6,15 @@ import PlacesView from '../components/places-list-view';
 import Slider from '../components/slider';
 import TagList from '../components/tag-list';
 import EmptyResults from '../components/empty-results';
+import { useLocation } from '../location';
 
 const NearbyPlacesView = props => {
+  const loc = useLocation();
+  const location = loc ? loc.coords.latitude+','+loc.coords.longitude : null;
   const { loading, data, error } = useQuery(gql`
     {
       nearby(
-        location: "56.6702937,16.2976897"
+        location: "${location}"
         radius: 50000
         category: "supermarket"
       ) {
@@ -160,12 +163,33 @@ const categories = [
   },
 ];
 
+const NearbyCitiesView = props => {
+  const loc = useLocation();
+  const location = loc ? loc.coords.latitude+','+loc.coords.longitude : null;
+  const { loading, data, error } = useQuery(gql`
+    {
+      nearby(location: "${location}", radius: 50000, category: "city") {
+        name
+        location {
+          lat
+          lng
+        }
+      }
+    }
+  `)
+  
+  return <TagList tags={data && data.nearby && data.nearby.map(i => ({
+    label: i.name,
+    link: `/location/${i.location.lat},${i.location.lng}`
+  }))} />
+}
+
 export default function IndexPage() {
   return (
     <div>
       <TabView views={tabViews} />
       <Slider items={categories} />
-      <TagList tags={tags} />
+      <NearbyCitiesView tags={tags} />
     </div>
   );
 }

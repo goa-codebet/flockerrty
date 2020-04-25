@@ -6,6 +6,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { v4 as uuidv4 } from 'uuid';
 
+import LocationProvider, { useLocation } from './location';
+
 import './styles/base.scss';
 
 window.uuid = window.localStorage.getItem('flockertyUUID');
@@ -18,10 +20,22 @@ const client = new ApolloClient({
   uri: 'https://flockerty-api.azurewebsites.net',
 });
 
+const Ask = ({ onAccept }) => {
+  return (
+    <div>
+      <h2>Welcome to flockerty!</h2>
+      <p>In order to use our service you'll need to enable location services. Do so by pressing the button below. Thanks &amp; Stay safe!</p>
+      <button onClick={() => onAccept()}>Enable location</button>
+    </div>
+  )
+}
+
 ReactDOM.render(
   <ApolloProvider client={client}>
     <React.StrictMode>
-      <Router />
+      <LocationProvider ask askComponent={<Ask />}>
+        <Router />
+      </LocationProvider>
     </React.StrictMode>
   </ApolloProvider>,
   document.getElementById('root')

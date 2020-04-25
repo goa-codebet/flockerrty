@@ -3,15 +3,18 @@ import PlacesView from '../components/places-list-view';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { useParams } from 'react-router';
+import { useLocation } from '../location';
 
 const CategoryPage = () => {
   const { id } = useParams();
 
   const NearbyPlacesView = props => {
+    const loc = useLocation();
+    const location = loc ? loc.coords.latitude+','+loc.coords.longitude : null;
     const { loading, data, error } = useQuery(gql`
       {
         nearby(
-          location: "56.6702937,16.2976897"
+          location: "${location}"
           radius: 50000
           category: "${id}"
         ) {
