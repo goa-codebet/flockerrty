@@ -2,6 +2,8 @@
 @import 'typography.scss';
 @import 'colors.scss';
 
+$shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -19,11 +21,50 @@ body {
 }
 
 .shadow {
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow;
 }
 
 .pulse {
   animation: pulse 1.5s infinite;
+}
+
+.button {
+  background: #fff;
+  color: $primary-pink;
+  border: 0;
+  padding: 1em 2em;
+  border-radius: 2em;
+  line-height: 1em;
+  font-size: 1.2em;
+  margin: .5em 0;
+  box-shadow: $shadow;
+}
+
+.AskLocation {
+  max-width: 500px;
+	margin: 5vh auto;
+	padding: 20px;
+  text-align: center;
+  
+  h1,h2,h3,h4,h5,h6,p {
+    color: #fff;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      112.48deg,
+      $primary-pink 6.72%,
+      $secondary-pink 106.88%
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 65%);
+  }
 }
 
 @keyframes pulse {

@@ -22,10 +22,10 @@ const client = new ApolloClient({
 
 const Ask = ({ onAccept }) => {
   return (
-    <div>
+    <div className="AskLocation">
       <h2>Welcome to flockerty!</h2>
       <p>In order to use our service you'll need to enable location services. Do so by pressing the button below. Thanks &amp; Stay safe!</p>
-      <button onClick={() => onAccept()}>Enable location</button>
+      <button className="button" onClick={() => onAccept()}>Enable location</button>
     </div>
   )
 }
