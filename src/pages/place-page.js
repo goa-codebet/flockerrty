@@ -12,6 +12,7 @@ const PlacePage = () => {
   const { loading, data, error } = useQuery(gql`
     {
       place(place_id: "${id}") {
+        place_id
         name
         photo
         address
@@ -21,6 +22,10 @@ const PlacePage = () => {
           time
           value
         }
+      }
+      
+      favorites(uuid: "${window.uuid}") {
+        place_id
       }
     }
   `);

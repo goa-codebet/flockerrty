@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './style.scss';
 
-const Place = ({ data, onFavourite, isFavourite }) => {
+const Place = ({ data, onFavourite }) => {
   if (!data) return null;
 
   const { name, address, city, categories, place_id } = data.place;
+  const isFavourite = data.favorites.find(fav => place_id === fav.place_id);
 
   return (
     <div className="Place">
-      {console.log(data)}
       <div className="Place__header">
         <div className="Place__header__content">
           <span>{categories[0]}</span>
@@ -20,7 +20,7 @@ const Place = ({ data, onFavourite, isFavourite }) => {
         </div>
         <div
           className="Place__header__favourite"
-          onClick={() => onFavourite(place_id)}>
+          onClick={() => {onFavourite(place_id)}}>
           {isFavourite ? (
             <i className="fas fa-heart"></i>
           ) : (
