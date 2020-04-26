@@ -13,8 +13,8 @@
 }
 
 .Square {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   background: $light-gray;
   position: relative;
 
@@ -33,7 +33,7 @@
   color: $tertiary-text-color;
 
   &__hour {
-    width: 14px;
+    width: 16px;
     margin: 0 1px;
     font-size: rem(10px);
 

@@ -4,7 +4,8 @@ import { getDates, timeLabel } from '../../utils/slots';
 import './style.scss';
 
 const Heatmap = ({ items }) => {
-  const max = items.reduce((acc, item) => acc+item.value, 0)
+  const total = items.reduce((acc, item) => acc+item.value, 0)
+  const max = Math.max(...items.map(i => i.value))
 
   return (
     <div className="Heatmap">

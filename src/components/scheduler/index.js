@@ -18,7 +18,7 @@ const Scheduler = ({
   
   const diff = 1000 * 60 * 60;
   const bookingTimes = getDates({ start });
-  const max = heatmap.reduce((acc, item) => acc+item.value, 0)
+  const max = Math.max(...heatmap.map(i => i.value))
 
   return (
     <div className="Scheduler">
