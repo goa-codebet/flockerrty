@@ -1,0 +1,129 @@
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Flockerty App - Help the world defeat COVID-19!</title>
+</head>
+<body>
+  <style>
+    body {margin: 0;font-family: 'Mukta', sans-serif;}
+    .container {max-width:992px;margin: 0 auto;backgrounad: red;}
+    .button {font-size: 36px;border-radius: 80px;background: red;padding: 10px 40px;background: #C684A7;box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.09);color: #fff;text-decoration: none;display: inline-block;}
+    
+    .hero,.cta,.text,.logos,.footer {padding: 50px 0;}
+    .hero,.alt,.numbers,.logos {color: #fff;background: linear-gradient(146.48deg, #E6BCE5 32.64%, #C684A7 111.82%);}
+    .hero,.cta,.numbers,.logos,.footer {text-align: center;}
+    .hero {height: calc(100vh - 100px);overflow: hidden;}
+    .hero p {font-size: 48px;margin-bottom:0;line-height: 1em;}
+    .hero .phones {transform:translateY(25%)}
+    
+    .hero-shadow {max-width: 992px;width:100%;height: 250px;margin: 0 auto;border-radius:30%;margin-top: -250px;box-shadow: 0px 10px 10px rgba(0, 0, 0, .2);z-index: -1;position: relative;}
+    
+    .cta {padding: 100px 0;}
+    
+    .numbers > div {display:flex;}
+    .numbers > div > div {flex: 1;padding: 50px 0;font-size:36px;line-height: 1em;}
+    .numbers > div > div > strong {display: block;font-size:48px;line-height: 1em;}
+    @media (max-width: 760px) {.numbers > div {display:block;}}
+    
+    .text {background: #F8F8F8;padding-right: 20px;padding-left: 20px;}
+    .text > div {column-count: 2;}
+    @media (max-width: 760px) {.text > div {column-count: 1;}}
+    
+    .banners {}
+    .banners .banner > div {display: flex;align-items: center;padding: 50px;}
+    .banners .banner > div p {flex:2;font-size: 48px;margin: 0 50px 0 0;line-height:1em;}
+    .banners .banner.alt > div p {order: 1;margin: 0 0 0 50px;}
+    .banners .banner > div img {margin-bottom: -50px;}
+    @media (max-width: 760px) {.banners .banner > div p {font-size: 26px;}}
+  </style>
+  <div class="hero">
+    <div class="container">
+      <img class="logo" src="/logo.png" />
+      <p>Help the world defeat COVID-19! 🦠 😷<br /> Avoid crowded places.</p>
+      <img class="phones" src="/phones.png" />
+    </div>
+  </div>
+  
+  <div class="hero-shadow"></div>
+  
+  <div class="cta">
+    <div class="container">
+      <a href="https://festive-heyrovsky-2fe48d.netlify.app/" class="button">Try Flockerty 👉</a>
+    </div>
+  </div>
+  
+  <div class="numbers">
+    <div class="container">
+      <div><strong>150 million</strong> places</div>
+      <div><strong>25 million</strong> updates daily</div>
+      <div><strong>99 %</strong> coverage of the world</div>
+    </div>
+  </div>
+  
+  <div class="text">
+    <div class="container">
+      <h1>Flockerty</h1>
+    </div>
+    <div class="container">
+      <p>The goal with Flockerty is to help people avoid crowded places and at the same time allow business owners to keep their business open. </p>
+
+      <h2>What is Flockerty?</h2>
+      <p>The idea is to let users register where they are going to be at a certain time, this could be a restaurant, supermarket, park etc. With this information from a large group of people we can generate a realtime heat-map of how crowded the places are going to be at a certain time, allowing other users to choose a time slot where the location is less crowded. That way we’re spreading the visitors over the whole day allowing the same amount of visitors in a less crowded environment.</p>
+
+      <h2>Why do we need Flockerty?</h2>
+      <p>This would potentially be a way to ease up lockdowns around the world, allowing safer ways for people to move freely in their community and helping them to comply with the rules set by their local government.</p>
+
+      <h2>Status of Flockerty</h2>
+      <p>Today Flockerty is a functional as a MVP. You can see you’re near by places, register for a time slot based on the heat-map, see your latest visits and store your favourite places. With a few minor changes we can be production ready in a few weeks. Since we’re working with Google Places API, the Flockerty APP can be scaled up and launched world wide without any major changes.</p>
+
+      <h2>After COVID-19</h2>
+      <p>After the crisis Flockerty could be used much in the same way as during the crisis. Avoiding crowded places have more benefits that reducing the spread of COVID-19. Ex. get better service at your favourite restaurant, spend less time queuing in the supermarket or enjoy the park for your self. </p>
+    </div>
+  </div>
+  
+  <div class="cta alt">
+    <div class="container">
+      <a href="https://festive-heyrovsky-2fe48d.netlify.app/" class="button">Try Flockerty 👉</a>
+    </div>
+  </div>
+  
+  <div class="banners">
+    <div class="banner">
+      <div class="container">
+        <p>Latest, Favourites and Nearby places always close to hand.</p>
+        <img src="/phone1.png" />
+      </div>
+    </div>
+    <div class="banner alt">
+      <div class="container">
+        <p>Search through 150 million places.</p>
+        <img src="/phone2.png" />
+      </div>
+    </div>
+    <div class="banner">
+      <div class="container">
+        <p>Easialy see crowded time slots before you select yours.</p>
+        <img src="/phone3.png" />
+      </div>
+    </div>
+  </div>
+  
+  <div class="logos">
+    <div class="container">
+      <a href="https://www.codebet.com?utm_source=flockerty&utm_medium=lp&utm_campaign=flockerty&utm_content=logo"><img src="/codebet.png" /></a>
+      <a href="https://www.hackthecrisis.com"><img src="/hackthecrisis.png" /></a>
+      <a href="https://www.euvsvirus.com"><img src="/euvsvirus.png" /></a>
+    </div>
+  </div>
+  
+  <div class="cta">
+    <div class="container">
+      <a href="https://festive-heyrovsky-2fe48d.netlify.app/" class="button">Try Flockerty 👉</a>
+    </div>
+  </div>
+  
+  <div class="footer">
+    Build with ❤️ by <a href="https://www.codebet.com?utm_source=flockerty&utm_medium=lp&utm_campaign=flockerty&utm_content=builtby"><strong>Codebet</strong></a>.
+  </div>
+</body>
+</html>
